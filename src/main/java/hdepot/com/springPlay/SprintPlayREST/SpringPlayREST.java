@@ -7,10 +7,10 @@ package com.springPlay;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.springPlay.SpringPlayServices;
+import com.springPlay.SpringPlayServices.*;
 
 @RestController
-class SpringPlayServices {
+public class SpringPlayREST {
     @RequestMapping("/")
     public String hello() {
         System.out.println("Inside / endpt");
@@ -19,7 +19,8 @@ class SpringPlayServices {
     @RequestMapping("/add")
     public String add() {
         System.out.println("Inside /add endpt");
-        int value = SpringPlayServices.adder(3, 4);
+        SpringPlayServices services = new SpringPlayServices();
+        int value = services.adder(3, 4);
         String returnString = "value of adder: "+value;
         return returnString;
         // return "Greetings from Spring Boot!";
@@ -27,14 +28,37 @@ class SpringPlayServices {
     @RequestMapping("/message")
     public String message() {
         System.out.println("Inside /message endpt");
-        // return "Greetings from Spring Boot!";
+        return "Greetings from Spring Boot!";
     }
+    
 }
 
 
 
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& SCRATCH &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+
+//POST REQUEST EXAMPLE
+// -------------------Create a User-------------------------------------------
+
+// @RequestMapping(value = "/user/", method = RequestMethod.POST)
+// public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
+//     logger.info("Creating User : {}", user);
+
+//     if (userService.isUserExist(user)) {
+//         logger.error("Unable to create. A User with name {} already exist", user.getName());
+//         return new ResponseEntity(new CustomErrorType("Unable to create. A User with name " + 
+//         user.getName() + " already exist."),HttpStatus.CONFLICT);
+//     }
+//     userService.saveUser(user);
+
+//     HttpHeaders headers = new HttpHeaders();
+//     headers.setLocation(ucBuilder.path("/api/user/{id}").buildAndExpand(user.getId()).toUri());
+//     return new ResponseEntity<String>(headers, HttpStatus.CREATED);
+// }
+ 
 
 //INITIALIZED W/THIS PROJECT
 

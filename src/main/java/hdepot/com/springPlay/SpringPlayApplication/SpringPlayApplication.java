@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-class SpringPlayApplication {
+public class SpringPlayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringPlayApplication.class, args);
