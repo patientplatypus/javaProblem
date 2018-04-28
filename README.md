@@ -1,5 +1,7 @@
 # Currently getting the following errors:
 
+- link to full stack trace (https://gist.github.com/patientplatypus/ea98214b5fa8ad6b3419947d95c56a41)
+
 `patientplatypus:~/Documents/springPlay:12:53:39$./run.sh`
 
 `[INFO] Scanning for projects...`
