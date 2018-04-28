@@ -1,5 +1,8 @@
 # Currently getting the following errors:
 
+- changes, still borked: https://gist.github.com/patientplatypus/5000d7478e1d1d8c4060e1331b3217fe
+
+
 - link to full stack trace (https://gist.github.com/patientplatypus/ea98214b5fa8ad6b3419947d95c56a41)
 
 `patientplatypus:~/Documents/springPlay:12:53:39$./run.sh`
