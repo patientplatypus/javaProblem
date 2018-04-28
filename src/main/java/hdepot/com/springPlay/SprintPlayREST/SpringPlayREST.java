@@ -6,8 +6,43 @@ package com.springPlay;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.springPlay.SpringPlayServices.*;
+
+class Numbers {
+
+    public Integer firstnumber = 0;
+    public Integer secondnumber = 0;
+
+    public Integer getFirstNumber() {
+        System.out.println("inside getFirstNumber");
+        System.out.println("firstnumber");
+        System.out.println(firstnumber);
+        return this.firstnumber;
+    }
+
+    public Integer getSecondNumber() {
+        System.out.println("inside getSecondNumber");
+        System.out.println("secondnumber");
+        System.out.println(secondnumber);
+        return this.secondnumber;
+    }
+
+    public void Numbers(Integer firstnumber, Integer secondnumber){
+        System.out.println("inside setNumbers");
+        System.out.println("firstnumber");
+        System.out.println(firstnumber);
+        System.out.println("secondnumber");
+        System.out.println(secondnumber);
+
+        this.firstnumber = firstnumber;
+        this.secondnumber = secondnumber;
+    }
+}
+
 
 @RestController
 public class SpringPlayREST {
@@ -18,7 +53,7 @@ public class SpringPlayREST {
     }
     @RequestMapping("/add")
     public String add() {
-        System.out.println("Inside /add endpt");
+        System.out.println("Inside /add endpt (GET)");
         SpringPlayServices services = new SpringPlayServices();
         int value = services.adder(3, 4);
         String returnString = "value of adder: "+value;
@@ -30,7 +65,28 @@ public class SpringPlayREST {
         System.out.println("Inside /message endpt");
         return "Greetings from Spring Boot!";
     }
-    
+    @RequestMapping(value = "addPOST", method = RequestMethod.POST)
+    public String addPOST(@RequestBody Numbers numbers) {
+
+        System.out.println("Inside /add endpt (POST)");
+
+        // System.out.println("Value of firstnumber");
+        // System.out.println(numbers.firstnumber);
+        // System.out.println("Value of secondnumber");
+        // System.out.println(numbers.secondnumber);
+        
+
+        int firstnumber = numbers.getFirstNumber(); 
+        int secondnumber = numbers.getSecondNumber(); 
+
+        System.out.println("Value of firstnumber");
+        System.out.println(firstnumber);
+        System.out.println("Value of secondnumber");
+        System.out.println(secondnumber);
+        // System.out.println("value of pants");
+        // System.out.println(pants);
+        return "hello there sailor";
+    }
 }
 
 
@@ -39,8 +95,16 @@ public class SpringPlayREST {
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& SCRATCH &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
+//(BETTER) POST REQUEST EXAMPLE
+// @RequestMapping(value = "product", method = RequestMethod.POST)
+// public String saveProduct(Product product) {
+//     productService.saveProduct(product);
+//     return "redirect:/product/" + product.getId();
+// }
 
-//POST REQUEST EXAMPLE
+
+
+// (BAD/DEPRECATED) POST REQUEST EXAMPLE
 // -------------------Create a User-------------------------------------------
 
 // @RequestMapping(value = "/user/", method = RequestMethod.POST)
