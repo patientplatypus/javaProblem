@@ -1,6 +1,6 @@
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& CODE &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-package hdepot.com.springPlay.SpringPlayApplication;
+package com.springPlay;
 
 import java.util.Arrays;
 

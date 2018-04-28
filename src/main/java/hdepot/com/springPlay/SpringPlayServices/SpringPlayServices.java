@@ -1,7 +1,7 @@
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& CODE &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-package hdepot.com.springPlay.SpringPlayServices;
+package com.springPlay;
 
 
 public class SpringPlayServices {

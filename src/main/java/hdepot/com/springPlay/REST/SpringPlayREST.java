@@ -2,12 +2,12 @@
 
 //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& CODE &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-package hdepot.com.springPlay.SpringPlayREST;
+package com.springPlay;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import hdepot.com.springPlay.SpringPlayServices.*;
+import com.springPlay.SpringPlayServices;
 
 @RestController
 class SpringPlayServices {
